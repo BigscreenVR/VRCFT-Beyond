@@ -1,6 +1,6 @@
-# BeyondExtTrackingInterface
+# VRCFT-Beyond
 
-VRCFaceTracking tracking module for the Bigscreen Beyond HMD.
+VRCFaceTracking module for the Bigscreen Beyond 2E HMD.
 
 ## Installing
 Grab the latest build from the Releases page and drop it into 
