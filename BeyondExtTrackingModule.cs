@@ -35,7 +35,7 @@ namespace BeyondExtTrackingInterface
             _isInitialized = false;
         }
 
-        public override (bool SupportsEye, bool SupportsExpression) Supported => (true, true);
+        public override (bool SupportsEye, bool SupportsExpression) Supported => (true, false);
 
         public override (bool eyeSuccess, bool expressionSuccess) Initialize(bool eyeAvailable, bool expressionAvailable)
         {
