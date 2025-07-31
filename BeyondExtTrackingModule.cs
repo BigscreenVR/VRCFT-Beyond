@@ -45,7 +45,7 @@ namespace BeyondExtTrackingInterface
                 _accessor = _sharedMem.CreateViewAccessor(0, Marshal.SizeOf<SharedGazeData>());
                 _isInitialized = true;
                 ModuleInformation.Name = "Beyond VRCFT Module";
-                return (true, true);
+                return (true, false);
             }
             catch (Exception ex)
             {
