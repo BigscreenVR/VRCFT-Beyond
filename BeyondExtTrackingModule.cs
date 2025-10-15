@@ -21,6 +21,8 @@ namespace BeyondExtTrackingInterface
         public float Confidence;
         public long Timestamp;
         public int IsValid;
+        public float LeftEyeClosedAmount;
+        public float RightEyeClosedAmount;
     }
 
     public class BeyondExtTrackingModule : ExtTrackingModule
@@ -54,6 +56,7 @@ namespace BeyondExtTrackingInterface
                 return (false, false);
             }
         }
+
         private Vector2 Vector3ToGazeCoordinates(Vector3 vector)
         {
             // Normalize the vector
@@ -81,9 +84,8 @@ namespace BeyondExtTrackingInterface
 
                 if (data.IsValid == 1)
                 {
-                    // TODO: Openness values are just placeholders for now
-                    UnifiedTracking.Data.Eye.Left.Openness = 1.0f;
-                    UnifiedTracking.Data.Eye.Right.Openness = 1.0f;
+                    UnifiedTracking.Data.Eye.Left.Openness = 1.0f - data.LeftEyeClosedAmount;
+                    UnifiedTracking.Data.Eye.Right.Openness = 1.0f - data.RightEyeClosedAmount;
 
                     Vector3 leftEye = new Vector3(data.LeftEyeX, data.LeftEyeY, data.LeftEyeZ);
                     Vector3 rightEye = new Vector3(data.RightEyeX, data.RightEyeY, data.RightEyeZ);
