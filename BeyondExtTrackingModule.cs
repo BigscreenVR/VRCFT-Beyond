@@ -23,6 +23,8 @@ namespace BeyondExtTrackingInterface
         public int IsValid;
         public float LeftEyeClosedAmount;
         public float RightEyeClosedAmount;
+        public float LeftEyePupilDiameterMm;
+        public float RightEyePupilDiameterMm;
     }
 
     public class BeyondExtTrackingModule : ExtTrackingModule
@@ -95,6 +97,9 @@ namespace BeyondExtTrackingInterface
 
                     UnifiedTracking.Data.Eye.Left.Gaze = leftGaze;
                     UnifiedTracking.Data.Eye.Right.Gaze = rightGaze;
+
+                    UnifiedTracking.Data.Eye.Left.PupilDiameter_MM = data.LeftEyePupilDiameterMm;
+                    UnifiedTracking.Data.Eye.Right.PupilDiameter_MM = data.RightEyePupilDiameterMm;
                 }
             }
             catch (Exception ex)
